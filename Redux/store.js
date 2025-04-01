@@ -1,27 +1,27 @@
-// app/store.js
 "use client"
 import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import authReducer from "../Redux/slices/authslice";
+import interviewReducer from "../Redux/slices/interview";
 
-const persistConfig = {
-  key: 'root',
+// Only persist auth if needed
+const authPersistConfig = {
+  key: 'auth',
   storage,
-  whitelist: ['auth']
+  whitelist: ['user', 'isAuthenticated']
 };
 
-const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
-    auth: persistedReducer
+    auth: persistReducer(authPersistConfig, authReducer),
+    interview: interviewReducer // No persistence needed for interviews
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: ['persist/PERSIST', 'persist/REGISTER', 'persist/REHYDRATE'],
-        ignoredPaths: ['register'], // Add this line
       },
     }),
 });

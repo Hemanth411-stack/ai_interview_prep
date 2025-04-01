@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(auth)/sign-in/page.jsx", "app/(auth)/sign-up/page.jsx", "app/(auth)/layout.jsx", "components/AuthForm.jsx", "components/FormField.jsx", "app/(root)/page.jsx", "components/InterviewCard.jsx", "app/(root)/layout.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(auth)/sign-in/page.jsx", "app/(auth)/sign-up/page.jsx", "app/(auth)/layout.jsx", "components/AuthForm.jsx", "components/FormField.jsx", "app/(root)/page.jsx", "components/InterviewCard.jsx", "app/(root)/layout.jsx", "models/interview.js"],
   "exclude": ["node_modules"]
 }

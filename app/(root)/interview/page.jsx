@@ -6,12 +6,13 @@ const Page = async () => {
 
   return (
     <>
-      <h3>Interview generation</h3>
+      <div className="card-interview"> Interview generation
 
       <Agent
         
         type="generate"
       />
+      </div>
     </>
   );
 };
